@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Filtros</title>
+    <link rel="stylesheet" href="Filtros.css">
+  </head>
+  <body>
+    <p><input type='file' id='cargar'></p>
+    
+    <canvas id='canvas'></canvas>
+    &ensp;&ensp;
+    <input type="button" value="Copiar / Reiniciar" onclick="copiar()" />
+    &ensp;&ensp;
+    <canvas id='canvas2'></canvas>
+
+    <br><br><b>Brillo</b>
+    <div class="contenedorBrillo">
+      <input type="range" min="1" max="100" value="50" class="slider" id="sliderBrillo" oninput="brillo();">&ensp;<span id="brillo"></span>&ensp;%      
+    </div>
+
+    <br><br><input type="button" value="Sepia" onclick="Sepia()" />
+    &ensp;&ensp;<input type="button" value="Escala de Grises - Promedio" onclick="grisesPromedio()" />
+    &ensp;&ensp;<input type="button" value="Escala de Grises - Canal" onclick="grisesCanal()" />
+    &ensp;&ensp;<input type="button" value="Filtro Rojo" onclick="filtroRojo()" />
+    &ensp;&ensp;<input type="button" value="Filtro Verde" onclick="filtroVerde()" />
+    &ensp;&ensp;<input type="button" value="Filtro Azul" onclick="filtroAzul()" />
+    &ensp;&ensp;<input type="button" value="Negativo" onclick="negativo()" />
+    <!--&ensp;&ensp;<input type="button" value="Blanco y Negro" onclick="blancoNegro()" />-->    
+    
+    <br><br><b>B / N</b>
+    <div class="contenedorBlancoyNegro">
+      <input type="range" min="1" max="255" value="128" class="slider" id="sliderBN" oninput="blancoNegro();">&ensp;<span id="bn"></span>&ensp;%      
+    </div>
+
+
+    <script src="Filtros.js"></script>
+    
+  </body>
+
+</html>

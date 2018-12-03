@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>implementaci�n del algoritmo de trazado de c�rculos de Bresenham</title>
+  </head>
+
+  <body>
+
+    <!-- Archivo con la rutina para pintar c�rculos utilizando javascript -->
+    <script src="circulo_modificado.js"></script>
+
+    <form id="formulario">
+      Seleccionar medida del Radio: <input name="r" type="text" /><br> <!-- Indicar el color del punto -->
+      Seleccionar color del Círculo: <input name="c" type="color" /> <!-- Indicar el color del punto -->
+      </form>
+     
+
+    <!-- Lienzo para pintar los circulos -->
+    <canvas id="lienzo" width="400" height="400" onmousedown="dibujar(event)" style="background-color: lightgray"> 
+    </canvas> <!-- La funci�n dibujar se ejecuta cada que se hace clic sobre el lienzo -->
+
+  </body>
+
+</html>

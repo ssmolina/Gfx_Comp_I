@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Convolución</title>
+    
+  </head>
+  <body>
+    <p><input type='file' id='cargar'></p>
+    <canvas width='200' height='200' id='canvas'></canvas>
+
+    <br>Matriz:<br>
+    <input id="si" type="text" size="1" />     
+    <input id="sc" type="text" size="1" />     
+    <input id="sd" type="text" size="1" />     
+    <br>
+    <input id="ci" type="text" size="1" />    
+    <input id="cc" type="text" size="1" />     
+    <input id="cd" type="text" size="1" />
+    <br>     
+    <input id="ii" type="text" size="1" />     
+    <input id="ic" type="text" size="1" />     
+    <input id="id" type="text" size="1" />     
+
+    <br><br>Divisor:&ensp;<input id="divisor" type="text" size="1" /> 
+    <!--Bias:&ensp;<input id="bias" type="text" size="1" /><br> -->
+    <!--Linea del Bias comentada ya que el script de alguna manera NO esta tomando
+      el valor del campo a pesar que esta bien definido. El archivo .js SI lo
+      encuentra, y el Debugger de Chrome si refleja correctamente el valor que 
+      el usuario pone, pero aun asi no funciona como debe, la imagen se distorsiona-->
+    <p><input type="button" value="Procesar" onclick="brillo()" /></p>
+    
+    <canvas width='200' height='200' id='canvas2'></canvas>
+    <script src="convolucion.js"></script>
+  </body>
+
+</html>

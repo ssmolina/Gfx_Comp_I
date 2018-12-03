@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Implementaci�n del algoritmo de trazado de l�neas de Bresenham</title>
+  </head>
+
+  <body>
+
+    <!-- Archivo con la rutina para pintar las l�neas utilizando javascript -->
+    <script src="lineabresenham_modificado.js"></script>
+
+    <form id="formulario">Seleccionar color de la Línea: <input name="c" type="color" /></form>
+
+    <!-- Lienzo para pintar las l�neas -->
+    <canvas id="lienzo" width="400" height="400" onmousedown="dibujar(event)" style="background-color: lightgray;"> 
+    </canvas> <!-- La funci�n dibujar se ejecuta cada que se hace clic sobre el lienzo -->
+
+  </body>
+
+</html>

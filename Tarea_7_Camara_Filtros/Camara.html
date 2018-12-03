@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Filtrado de video</title>
+    <script type="text/javascript" src="CamMan.js"></script>
+  </head>
+  <body>
+    <b>Imagen Sin Filtros:</b>
+    <div id="salida"></div><br>
+    <b>Filtro Negativo:</b>
+    <div id="salida2"></div><br>    <!--NEGATIVO-->
+    <b>Filtro Sepia:</b>
+    <div id="salida3"></div><br>    <!--SEPIA-->
+    <b>Escala de Grises:</b>
+    <div id="salida4"></div><br>    <!--GRISES-->
+
+    <script type="text/javascript">
+
+      var camMan = new CamMan({ container: 'salida' });
+      camMan.start();
+      camMan.on('start', function(){
+        camMan.getCanvas({ container: 'salida2', onFrame: filtro(negativo) });
+        camMan.getCanvas({ container: 'salida3', onFrame: filtro(sepia) });
+        camMan.getCanvas({ container: 'salida3', onFrame: filtro(grises) });
+      });
+     
+      var filtro = function filtrar(f) {
+        return function (lienzo) {
+          var contexto = lienzo.getContext('2d');
+          var datosImg = contexto.getImageData(0, 0, lienzo.width, lienzo.height);
+          datosImg = f(datosImg);
+          contexto.putImageData(datosImg, 0, 0);
+        };
+      };
+
+      var negativo = function negativo(datosI) 
+      {
+        var datos = datosI.data;
+        for (var i = 0; i < datos.length; i += 4) 
+        {
+          datos[i+0]=255-datos[i+0];
+          datos[i+1]=255-datos[i+1];
+          datos[i+2]=255-datos[i+2];
+          datos[i+3]=datos[i+3];
+        }
+        return datosI;
+      };
+      
+      var sepia = function sepia(datosI) 
+      {
+        var i;
+        var datos = datosI.data;
+
+        for (i = 0; i < datos.length; i+=4)
+        {
+          var gris =  (datos[i+0] * 0.3) + 
+                      (datos[i+1] * 0.59)+
+                      (datos[i+2] * 0.11);
+
+          var sepiaRojo = gris +100;
+          var sepiaVerde= gris + 50;
+
+          if (sepiaRojo > 255) {sepiaRojo = 255}
+          if (sepiaVerde >255) {sepiaVerde= 255}        
+            
+            datos[i+0] = sepiaRojo;
+            datos[i+1] = sepiaVerde;
+            datos[i+2] = gris;
+            datos[i+3] = datos[i+3];
+          }        
+        return datosI;
+      };
+      
+      var grises = function grises(datosI) 
+      {
+        var i;
+        var datos = datosI.data;
+
+        for (i = 0; i < datos.length; i+=4)
+        {
+          var gris =  (datos[i+0] * 0.3) + 
+                      (datos[i+1] * 0.59)+
+                      (datos[i+2] * 0.11);
+
+            datos[i+0] = gris;
+            datos[i+1] = gris;
+            datos[i+2] = gris;
+            datos[i+3] = datos[i+3];
+          }        
+        return datosI;
+      };
+
+    </script>
+  </body>
+</html>

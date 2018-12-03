@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Pintando pixeles con el clic del rat�n</title>
+  </head>
+
+  <body>
+
+    <!-- Archivo con la rutina para pintar el pixel utilizando javascript -->
+    <script src="pixelclic_modificado.js"></script>
+    <form id="formulario">
+    Seleccionar color del Punto: <input name="c" type="color" /> <!-- Indicar el color del punto -->
+    </form>
+   
+    <!-- Lienzo para pintar el punto al hacer clic con el rat�n -->
+    <canvas style = "background-color: #A2A2A2;" id="lienzo" width="400" height="400" onmousedown="dibujar(event)"> 
+    </canvas>
+
+  </body>
+
+</html>

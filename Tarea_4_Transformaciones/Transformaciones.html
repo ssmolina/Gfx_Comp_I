@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Transformaciones</title>
+  </head>
+
+  <body>
+        <script src="Transformaciones.js"> </script> <br>
+    <div style="text-align:center">
+      <p>
+        &ensp;Color&ensp;<input id="color" type="color" onchange="cambiarColor()" />
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        dx&ensp;<input id="dx" type="text" size="3" /> 
+        dy&ensp;<input id="dy" type="text" size="3" />
+        <input type="button" value="Trasladar" onclick="trasladar()" />
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        sx&ensp;<input id="sx" type="text" size="3" />
+        sy&ensp;<input id="sy" type="text" size="3" />
+        <input type="button" value="Escalar" onclick="escalar()" />
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        &Aacute;ngulo&ensp;<input id="angulo" type="text" size="3" />
+        <input type="button" value="Rotar" onclick="rotar()" />
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input type="button" value="Reiniciar" onclick="reiniciar()" /></p>
+      </p>
+    </div>
+
+    <div style="text-align:center">
+      <canvas style= "background-color:#909090; "id="canvas" width="600" height="600" onmousedown="dibujar(event)"> 
+      </canvas>
+    </div>
+    
+  </body>
+
+</html>
